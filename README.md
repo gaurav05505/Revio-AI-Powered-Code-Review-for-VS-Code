@@ -180,7 +180,6 @@ If you need to change your API key:
 - 🤖 Gemini and Ollama support
 - 📊 Real-time progress tracking
 - 🔐 Secure API key storage
-- 📝 Support for JS, TS, HTML, CSS files
 
 ---
 
