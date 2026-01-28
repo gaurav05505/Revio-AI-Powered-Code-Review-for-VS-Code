@@ -2,11 +2,11 @@ import fs from 'fs';
 import path from 'path';
 import chalk from 'chalk';
 
-// --- IMPORT PROVIDERS ---
+// PROVIDERS 
 import * as ollamaProvider from './Providers/Ollama.js';
 import * as geminiProvider from './Providers/Gemini.js';
 
-// Configuration Defaults
+// Configuration 
 const OLLAMA_MODEL = 'codellama:7b';
 const GEMINI_MODEL = 'gemini-2.0-flash-exp';
 
@@ -14,7 +14,7 @@ const GEMINI_MODEL = 'gemini-2.0-flash-exp';
 const Aext = ['.js', '.jsx', '.ts', '.tsx', '.html', '.css'];
 const Rext = ['node_modules', 'dist', 'build', '.git', '.vscode', 'out'];
 
-// --- FILE OPERATIONS ---
+//  FILE OPERATIONS 
 
 function listFile(directory) {
     const result = [];
@@ -50,7 +50,7 @@ function writeFile(filePath, content) {
     fs.writeFileSync(filePath, content, 'utf-8');
 }
 
-// --- MAIN AGENT ---
+//  MAIN AGENT
 
 export async function reviewProject({ folderPath, provider: providerType, apiKey, outputChannel }) {
     
@@ -138,13 +138,13 @@ export async function reviewProject({ folderPath, provider: providerType, apiKey
                 continue;
             }
 
-            // Optional: Get Summary
+            // Get Summary
             if (selectedProvider.getDiffSummary) {
                 try {
                     const diffSummary = await selectedProvider.getDiffSummary(originalCode, fixedCode, filePath, selectedModel);
                     log(`   📝 Summary: ${diffSummary.replace(/\n/g, ' ')}`, chalk.white);
                 } catch (sErr) {
-                    /* ignore summary errors */
+                    
                 }
             }
 

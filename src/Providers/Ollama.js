@@ -1,7 +1,5 @@
-// No need to import fetch; modern VS Code/Node has it globally.
-// If you must use node-fetch, ensure it is in your package.json dependencies.
 
-const OLLAMA_URL = 'http://127.0.0.1:11434'; // Use 127.0.0.1 for stability
+const OLLAMA_URL = 'http://127.0.0.1:11434'; 
 
 // ---------------- UTILS ----------------
 function stripCodeFences(text) {
@@ -9,12 +7,11 @@ function stripCodeFences(text) {
 
     let cleaned = text.trim();
 
-    // 1. Remove Markdown code blocks (e.g., ```javascript ... ```)
+    // 1. Remove Markdown code blocks
     cleaned = cleaned.replace(/^```[\w]*\n?/gm, '');
     cleaned = cleaned.replace(/```$/gm, '');
 
-    // 2. Only remove preambles if they are clearly NOT code. 
-    // We target common LLM chat patterns specifically.
+    //  target common LLM chat patterns specifically.
     const patterns = [
         /^Here is the corrected code:?/gi,
         /^Fixed code:?/gi,
@@ -31,8 +28,6 @@ function stripCodeFences(text) {
 // ---------------- INITIALIZE ----------------
 export async function initialize() {
     try {
-        // Ollama doesn't have /api/chat/status. 
-        // We check the base URL or /api/tags to see if the service is up.
         const res = await fetch(`${OLLAMA_URL}/api/tags`);
         if (!res.ok) {
             throw new Error(`Ollama service is not responding (Status: ${res.status})`);
@@ -44,7 +39,6 @@ export async function initialize() {
     }
 }
 
-// ---------------- FIX CODE ----------------
 export async function fixCode(filePath, fileContent, model) {
     const prompt = `
 FILE PATH: ${filePath}
@@ -61,7 +55,7 @@ ${fileContent}
                 stream: false,
                 options: { 
                     temperature: 0, 
-                    num_predict: 4096 // Increased slightly for larger files
+                    num_predict: 4096 
                 },
                 messages: [
                     {
