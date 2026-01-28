@@ -47,6 +47,7 @@ Open Command Palette and run: Revio: Reset Gemini API Key
 
 ---
 
+
 ## ⚙️ Available Commands
 
 | Command | Description |
@@ -60,6 +61,32 @@ Open Command Palette and run: Revio: Reset Gemini API Key
 - Visual Studio Code version **1.90.0** or higher
 - Internet connection for Gemini
 - Ollama installed and running for local model support
+
+---
+
+## How It Works
+
+
+### Step 1: Open Command Palette
+Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac) and type **"Revio: Check"**
+
+![Step 1 - Command Palette](images/first.png)
+
+### Step 2: Select AI Provider
+Choose between Ollama or Gemini
+
+![Step 2 - Select Provider](images/second.png)
+
+### Step 3: Select Folder
+Choose the folder you want to review
+
+![Step 3 - Select Folder](images/third.png)
+
+### Step 4: Watch the Magic!
+View progress in the Output panel (View → Output → select "Revio")
+
+![Step 4 - Scanning Progress](images/fourth.png)
+
 
 ---
 
