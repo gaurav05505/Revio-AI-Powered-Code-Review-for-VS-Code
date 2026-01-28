@@ -1,0 +1,48 @@
+{
+  "name": "revio",
+  "displayName": "Revio",
+  "icon" :"icon.png" ,
+  "publisher": "gaurav",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gaurav05505/Revio-AI-Powered-Code-Review-for-VS-Code.git"
+  },
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.reviewCode",
+        "title": "Revio: Check"
+      },
+      {
+        "command": "extension.resetApiKey",
+        "title": "Revio: Reset Gemini API Key"
+      }
+    ]
+  },
+  "scripts": {
+  "vscode:prepublish": "npm run compile",
+  "compile": "tsc -p ./",
+  "watch": "tsc -watch -p ./",
+  "pretest": "npm run compile"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "chalk": "^4.1.2"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^20.x",
+    "@types/vscode": "^1.90.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.0"
+  }
+}
