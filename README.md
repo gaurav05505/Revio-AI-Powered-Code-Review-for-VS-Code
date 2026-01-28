@@ -70,22 +70,22 @@ Open Command Palette and run: Revio: Reset Gemini API Key
 ### Step 1: Open Command Palette
 Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac) and type **"Revio: Check"**
 
-![Step 1 - Command Palette](images/first.png)
+![Step 1 - Command Palette](image/first.png)
 
 ### Step 2: Select AI Provider
 Choose between Ollama or Gemini
 
-![Step 2 - Select Provider](images/second.png)
+![Step 2 - Select Provider](image/second.png)
 
 ### Step 3: Select Folder
 Choose the folder you want to review
 
-![Step 3 - Select Folder](images/third.png)
+![Step 3 - Select Folder](image/third.png)
 
 ### Step 4: Watch the Magic!
 View progress in the Output panel (View → Output → select "Revio")
 
-![Step 4 - Scanning Progress](images/fourth.png)
+![Step 4 - Scanning Progress](image/fourth.png)
 
 
 ---
