@@ -1,9 +1,9 @@
 {
   "name": "revio",
   "displayName": "Revio",
-  "icon" :"icon.png" ,
+  "icon": "icon.png",
   "publisher": "Gaurav05",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/gaurav05505/Revio-AI-Powered-Code-Review-for-VS-Code.git"
@@ -29,10 +29,10 @@
     ]
   },
   "scripts": {
-  "vscode:prepublish": "npm run compile",
-  "compile": "tsc -p ./",
-  "watch": "tsc -watch -p ./",
-  "pretest": "npm run compile"
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
